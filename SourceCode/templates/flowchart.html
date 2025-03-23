@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Flowchart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+       font-family: Arial, sans-serif;
+        /* Path to your background image */
+       background-size: 132%; /* Ensures the image fills the screen */
+       background-position: center; /* Centers the image */
+       background-repeat: no-repeat; /* Prevents repetition of the image */
+       margin: 0;
+       padding: 0;
+       height: 100%; /* Makes both html and body elements take up the full viewport height */
+   }
+   
+   .container {
+       min-height: 100vh; /* Ensures the content container takes up the full viewport height */
+   }
+   
+   
+   
+   
+       </style>
+    
+</head>
+<body>
+    <h1>Project Flowchart</h1>
+    
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='nec.jpg') }}" alt="Nec College Logo">
+        <ul>
+         <li><a href="/">Home</a> </li>  |
+        <li><a href="/about">About</a></li> |
+        <li><a href="/predictions">Predictions</a> </li>|
+        <li><a href="/metrics">Metrics</a></li> |
+        <li><a href="/flowchart">Flowchart</a></li>
+        
+        </ul> 
+       
+     </nav>
+
+    <div id="content">
+        <h2>Flowchart </h2>
+<p>The following flowchart illustrates the workflow of the ckd application development process. It highlights the essential steps, including data collection, preprocessing, model selection, training, validation, evaluation, and finalizing the model. Each step plays a crucial role in building an accurate and reliable system.</p>
+
+<img src="/static/images/block.png" 
+     alt="Flowchart of Development Process" 
+     style="width:100%; max-width:600px; display:block; margin: 20px auto; border: 1px solid #000;">
+
+<p>As shown in the flowchart, the process begins with collecting and preprocessing data, followed by selecting an appropriate model. Training and validation loops ensure the model's performance is optimal before evaluation and finalization. Feedback loops between preprocessing, training, and evaluation ensure continuous improvement.</p>
+
+        
+        
+    </div>
+    
+</body>
+</html>

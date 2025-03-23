@@ -1,0 +1,22 @@
+
+body {
+    background-image: url('static/images/istockphoto-472946256-612x612.jpg');
+    background-repeat: no-repeat;
+    color: #cb3636;
+    background-size:60% 110%;
+
+}
+
+.container {
+    font-style: italic;
+    color: black;
+    font-size: 35px;
+    margin-left: 330px;
+}
+
+.false {
+    font-size: 20px;
+    color: black;
+    font-style: oblique;
+    margin-left: 280px;
+}

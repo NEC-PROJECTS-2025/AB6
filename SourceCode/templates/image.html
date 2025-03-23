@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/images/230227Kidneys.jpg'); /* Path to your background image */
+            background-size:cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin-left: 35%;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4e0374;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(60% - 5px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input.error {
+            border-color: red;
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            border: solid #000;
+            border-radius: 5px;
+            background-color: #4e0374;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6b057c;
+        }
+    </style>
+</head>
+<body>
+<h1>Kidney Disease Predictor</h1>
+<nav class="navbar">
+    <img src="{{ url_for('static', filename='nec.jpg') }}" alt="Nec College Logo">
+    <ul>
+     <li><a href="/">Home</a> </li>  |
+    <li><a href="/about">About</a></li> |
+    <li><a href="/predictions">Predictions</a> </li>|
+    <li><a href="/metrics">Metrics</a></li> |
+    <li><a href="/flowchart">Flowchart</a></li>
+    
+    </ul> 
+   
+ </nav>
+
+
+    <form class="form-horizontal" action="/predictions" method="POST">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="age" placeholder="Age (in years)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="blood_pressure" placeholder="Blood Pressure (in mm/Hg)(num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="specific_gravity" placeholder="Specific Gravity(points)" min="0" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="albumin" placeholder="Albumin (0, 1, 2, 3, 4, 5)" min="0" max="5"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="sugar" placeholder="Sugar (0, 1, 2, 3, 4, 5)" min="0" max="5"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="red_blood_cells" placeholder="Red Blood Cells (0: Abnormal; 1: Normal)" min="0" max="1"  required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="pus_cell" placeholder="Pus Cell (0: Abnormal; 1: Normal)" min="0" max="1" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="pus_cell_clumps" placeholder="Pus Cell Clumps (0: Not Present; 1: Present)" min="0" max="1"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="bacteria" placeholder="Bacteria (0: Not Present; 1: Present)" min="0" max="1"  required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blood_glucose_random" placeholder="Blood Glucose Random (in mgs/dl)(num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="blood_urea" placeholder="Blood Urea (in mgs/dl)(num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="serum_creatinine" placeholder="Serum Creatinine (in mgs/dl)(points)" min="0" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="text" name="sodium" placeholder="Sodium (in mEq/L)(num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="potassium" placeholder="Potassium (in mEq/L)(points and num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="haemoglobin" placeholder="Haemoglobin (in gms)(points)" min="0" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="packed_cell_volume" placeholder="Packed Cell Volume(num)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="white_blood_cell_count" placeholder="White Blood Cell Count(in cells)(1000)" min="0" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="red_blood_cell_count" placeholder="Red Blood Cell Count(in millions)(pt&num-10)" min="0" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="hypertension" placeholder="Hypertension (0: No; 1: Yes)"  min="0" max="1"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="diabetes_mellitus" placeholder="Diabetes Mellitus (0: No; 1: Yes)"  min="0" max="1"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input class="form-control" type="number" name="coronary_artery_disease" placeholder="Coronary Artery Disease (0: No; 1: Yes)" min="0" max="1" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="appetite" placeholder="Appetite (0: Good; 1: Poor)"  min="0" max="1"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="peda_edema" placeholder="Pedal Edema (0: No; 1: Yes)"  min="0" max="1"  required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input  class="form-control" type="number" name="aanemia" placeholder="Anemia (0: No; 1: Yes)"  min="0" max="1"  required>
+                </div>
+            </div>
+        </div>
+        <input  type="submit" class="btn btn-info btn-block" value="Predict">
+    </form>
+    <script>
+        function validateForm() {
+            var age = document.getElementById('age').value;
+
+            if (age < 0 || bloodPressure < 0 || specificGravity < 0) {
+                alert('Please enter valid values (greater than or equal to 0)');
+                document.getElementById('age').classList.toggle('error', age < 0);
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
+            

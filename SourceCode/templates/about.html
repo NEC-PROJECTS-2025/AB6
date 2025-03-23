@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+       font-family: Arial, sans-serif;
+       background-image: url('/static/images/3.jpeg'); /* Path to your background image */
+       background-size: 98%; /* Ensures the image fills the screen */
+       background-position: center; /* Centers the image */
+       background-repeat: no-repeat; /* Prevents repetition of the image */
+       margin: 0;
+       padding: 0;
+       height: 100%; /* Makes both html and body elements take up the full viewport height */
+   }
+   
+   .container {
+       min-height: 100vh; /* Ensures the content container takes up the full viewport height */
+   }
+   
+   
+   
+   
+       </style>
+</head>
+<body>
+    <h1>About The Project</h1>
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='nec.jpg') }}" alt="Nec College Logo">
+        <ul>
+         <li><a href="/">Home</a> </li>  |
+        <li><a href="/about">About</a></li> |
+        <li><a href="/predictions">Predictions</a> </li>|
+        <li><a href="/metrics">Metrics</a></li> |
+        <li><a href="/flowchart">Flowchart</a></li>
+        
+        </ul> 
+       
+     </nav>
+
+     <div class="content">
+        
+        <h2>
+            This project, <strong>Chronic Kidney Disease Prediction Using Machine Learning Models</strong>, aims to 
+            leverage advanced machine learning algorithms to predict the likelihood of chronic kidney disease (CKD) 
+            based on patient data. The project involves preprocessing raw medical datasets, applying dimensionality 
+            reduction techniques like PCA, and evaluating the performance of multiple models including Decision Tree, 
+            Random Forest, XGBoost, and Support Vector Machines.
+        </h2>
+        <h2>
+            By analyzing key health indicators such as blood pressure, glucose levels, and creatinine levels, this project 
+            seeks to provide a reliable tool for early detection of CKD. The ultimate goal is to support healthcare 
+            professionals in decision-making and improve patient outcomes by enabling timely intervention.
+        </h2>
+        <h2>
+            This project also includes a user-friendly frontend built using Flask, allowing users to input data and 
+            receive predictions seamlessly. This comprehensive approach combines technical precision with practical 
+            accessibility to address a critical healthcare challenge.
+        </h2>
+        
+
+    
+    
+    <div id="content">
+        <h1 style="color: hsl(244, 90%, 42%);">
+            "This web application is designed to predict chronic kidney disease (CKD) using advanced machine learning models. It provides accurate insights based on user-provided data, helping in early detection and better decision-making. Our goal is to contribute to improved healthcare outcomes through technology."
+        </h1>
+        
+    </div>
+
+    
+</body>
+</html>

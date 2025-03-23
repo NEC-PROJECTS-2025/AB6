@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+     html, body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/images/chronic-kidney-disease.webp'); /* Path to your background image */
+    background-size: 132%; /* Ensures the image fills the screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition of the image */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Makes both html and body elements take up the full viewport height */
+}
+
+.container {
+    min-height: 100vh; /* Ensures the content container takes up the full viewport height */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Chronic Kidney Disease predictions using machine learning and deep learning models</h1>
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='nec.jpg') }}" alt="Nec College Logo">
+        <ul>
+         <li><a href="/">Home</a> </li>  |
+        <li><a href="/about">About</a></li> |
+        <li><a href="/predictions">Predictions</a> </li>|
+        <li><a href="/metrics">Metrics</a></li> |
+        <li><a href="/flowchart">Flowchart</a></li>
+        
+        </ul> 
+       
+     </nav>
+
+     <div id="content">
+        <h1>Our Team Members Are:</h1>
+        <h2>
+            1. Nuti Revanth<br>
+            <span style="margin-left: 160px;">2. Kota Veera Raghava Reddy</span><br>
+            <span style="margin-left: 75px;">3. Kurra Mahesh Babu</span><br>
+            <span style="margin-left: 215px;">4. Yallanti Likhith Prasanna Kumar</span>
+        </h2>
+    </div>
+    
+    <div id="content" style="text-align: center; margin: 20px;">
+        <h2>Contact Us:</h2>
+        <ul style="list-style-type: none; padding: 0; font-size: 18px;">
+            <li>Phone 1: 7672001772</li>
+            <li>Phone 2: 7036378135</li>
+            <li>Email: <a href="mailto:nutirevant541@gmail.com" style="text-decoration: none; color: #007BFF;">nutirevant541@gmail.com</a></li>
+        </ul>
+    </div>
+    
+
+     
+    
+    
+    
+</body>
+</html>

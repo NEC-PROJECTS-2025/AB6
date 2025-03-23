@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Model Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        html, body {
+       font-family: Arial, sans-serif;
+        /* Path to your background image */
+       background-size: 132%; /* Ensures the image fills the screen */
+       background-position: center; /* Centers the image */
+       background-repeat: no-repeat; /* Prevents repetition of the image */
+       margin: 0;
+       padding: 0;
+       height: 100%; /* Makes both html and body elements take up the full viewport height */
+   }
+   
+   .container {
+       min-height: 100vh; /* Ensures the content container takes up the full viewport height */
+   }
+   
+   
+   
+   
+       </style>
+
+</head>
+<body>
+    <h1>Model Metrics</h1>
+    <nav class="navbar">
+        <img src="{{ url_for('static', filename='nec.jpg') }}" alt="Nec College Logo">
+        <ul>
+         <li><a href="/">Home</a> </li>  |
+        <li><a href="/about">About</a></li> |
+        <li><a href="/predictions">Predictions</a> </li>|
+        <li><a href="/metrics">Metrics</a></li> |
+        <li><a href="/flowchart">Flowchart</a></li>
+        
+        </ul> 
+       
+     </nav>
+
+    <div id="content">
+        <h1>Metrics for Evaluating the CKD</h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Classifier</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1-Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AdaBoost</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+            <tr>
+                <td>Decision Tree</td>
+                <td>98.75</td>
+                <td>98.77</td>
+                <td>98.75</td>
+                <td>98.74</td>
+            </tr>
+            <tr>
+                <td>XGBoost</td>
+                <td>99.12</td>
+                <td>99.08</td>
+                <td>99.06</td>
+                <td>99.08</td>
+            </tr>
+            <tr>
+                <td>Random Forest</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+            <tr>
+                <td>Logistic Regression</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+            <tr>
+                <td>SVM</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+            <tr>
+                <td>KNN</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+            <tr>
+                <td>Chi Square</td>
+                <td>98.75</td>
+                <td>98.79</td>
+                <td>98.75</td>
+                <td>98.75</td>
+            </tr>
+        </tbody>
+    </table>
+    
+
+    <h2>1. Precision</h2>
+    <p><strong>Definition:</strong> Precision measures how many of the predicted positive results are actually correct.</p>
+    <p><strong>Formula:</strong></p>
+    <p>Precision = TP / (TP + FP)</p>
+    
+
+    <h2>2. Recall</h2>
+    <p><strong>Definition:</strong> Recall measures how many of the actual positive results are correctly identified by the system.</p>
+    <p><strong>Formula:</strong></p>
+    <p>Recall = TP / (TP + FN)</p>
+    
+
+    <h2>3. F1-Score</h2>
+    <p><strong>Definition:</strong> F1-score is the harmonic mean of precision and recall, providing a balanced evaluation.</p>
+    <p><strong>Formula:</strong></p>
+    <p>F1-Score = 2 × (Precision × Recall) / (Precision + Recall)</p>
+    
+    <h2>4. Accuracy</h2>
+    <p><strong>Definition:</strong> Accuracy measures the proportion of total predictions that were correct.</p>
+    <p><strong>Formula:</strong></p>
+    <p>Accuracy = (TP + TN) / Total Predictions</p>
+    
+    
+
+</body>
+</html>
