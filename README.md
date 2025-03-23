@@ -7,7 +7,7 @@ Chronic Kidney Disease Prediction Using Machine Learning And Deep Learning Model
     1. Nuti Revanth
     2. Kota Veera Raghava Reddy
     3. Kurra Mahesh Babu
-    4.yallanti Likhith Prasanna Kumar
+    4. Yallanti Likhith Prasanna Kumar
     
 **INTRODUCTION**
 
